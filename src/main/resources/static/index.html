@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Конвертер валют</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Конвертер валют</h1>
+  <form id="convertForm" class="form">
+    <input type="number" id="amount" placeholder="Сумма" min="0" step="0.01" required>
+    <select id="fromCurrency">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="JPY">JPY</option>
+      <option value="RUB">RUB</option>
+    </select>
+    <span>→</span>
+    <select id="toCurrency">
+      <option value="EUR">EUR</option>
+      <option value="USD">USD</option>
+      <option value="GBP">GBP</option>
+      <option value="JPY">JPY</option>
+      <option value="RUB">RUB</option>
+    </select>
+    <button type="submit">Конвертировать</button>
+  </form>
+  <p id="error" class="error" style="display: none;"></p>
+  <p id="result" class="result" style="display: none;"></p>
+  <h2>История конверсий</h2>
+  <table id="historyTable">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Сумма</th>
+      <th>Из валюты</th>
+      <th>В валюту</th>
+      <th>Результат</th>
+      <th>Дата</th>
+      <th>Действия</th>
+    </tr>
+    </thead>
+    <tbody id="historyBody"></tbody>
+  </table>
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <h3>Редактировать запись</h3>
+      <form id="editForm">
+        <input type="number" id="editAmount" placeholder="Сумма" min="0" step="0.01" required>
+        <select id="editFromCurrency">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="JPY">JPY</option>
+          <option value="RUB">RUB</option>
+        </select>
+        <select id="editToCurrency">
+          <option value="EUR">EUR</option>
+          <option value="USD">USD</option>
+          <option value="GBP">GBP</option>
+          <option value="JPY">JPY</option>
+          <option value="RUB">RUB</option>
+        </select>
+        <input type="number" id="editConvertedAmount" placeholder="Результат" min="0" step="0.01" required>
+        <div>
+          <button type="submit" class="save-btn">Сохранить</button>
+          <button type="button" class="cancel-btn" id="cancelEdit">Отмена</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
