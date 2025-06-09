@@ -24,7 +24,7 @@ public class CurrencyRateDTO {
         return source;
     }
 
-    // Сеттеры
+    
     public void setCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
     }
