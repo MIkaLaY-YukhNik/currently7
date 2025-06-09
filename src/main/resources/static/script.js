@@ -40,7 +40,7 @@ document.getElementById('convertForm').addEventListener('submit', async (e) => {
             body: JSON.stringify(historyEntry)
         });
         if (!saveResponse.ok) throw new Error('Ошибка сохранения в историю');
-        await fetchHistory(); // Обновляем историю после успешного сохранения
+        await fetchHistory(); 
     } catch (err) {
         error.textContent = err.message || 'Ошибка при конвертации валют';
         error.style.display = 'block';
@@ -82,7 +82,7 @@ async function deleteHistory(id) {
             method: 'DELETE'
         });
         if (!response.ok) throw new Error('Ошибка удаления');
-        await fetchHistory(); // Обновляем историю после удаления
+        await fetchHistory(); 
     } catch (err) {
         document.getElementById('error').textContent = err.message || 'Ошибка при удалении записи';
         document.getElementById('error').style.display = 'block';
@@ -122,7 +122,7 @@ function openEditModal(button) {
             });
             if (!response.ok) throw new Error('Ошибка обновления');
             document.getElementById('editModal').style.display = 'none';
-            await fetchHistory(); // Обновляем историю после редактирования
+            await fetchHistory(); 
         } catch (err) {
             document.getElementById('error').textContent = err.message || 'Ошибка при обновлении записи';
             document.getElementById('error').style.display = 'block';
