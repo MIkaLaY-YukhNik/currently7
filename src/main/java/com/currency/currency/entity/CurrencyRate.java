@@ -23,7 +23,7 @@ public class CurrencyRate {
     @Column(name = "source")
     private String source;
 
-    // Геттеры
+  
     public String getCurrencyCode() {
         return currencyCode;
     }
@@ -40,7 +40,7 @@ public class CurrencyRate {
         return source;
     }
 
-    // Сеттеры
+    
     public void setCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
     }
