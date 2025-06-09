@@ -1,7 +1,7 @@
 package com.currency.currency.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-//import jakarta.persistence.*;
+
 
 import javax.persistence.*;
 import java.util.ArrayList;
